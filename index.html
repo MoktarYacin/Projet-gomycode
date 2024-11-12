@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8"> <!-- Déclare le type d'encodage des caractères, ici UTF-8 pour gérer tous les caractères spéciaux -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- Assure que le design est responsive sur tous les appareils (optimisation mobile) -->
+    <title>Jeu de mémoire</title> <!-- Titre de la page qui apparaît dans l'onglet du navigateur -->
+    <link rel="stylesheet" href="style.css"> <!-- Lien vers la feuille de style CSS pour l'apparence de la page -->
+</head>
+<body>
+    <!-- En-tête du site -->
+    <header>
+        <h1>Jeu de mémoire</h1> <!-- Titre principal du jeu, affiché dans l'en-tête -->
+    </header>
+    
+    <!-- Contenu principal du jeu -->
+    <main>
+        <!-- Conteneur d'images de fond (ici probablement pour une animation ou des éléments visuels) -->
+        <div class="image-container">
+            <div class="background-image left"></div> <!-- Image ou élément de fond à gauche -->
+            <div class="background-image center"></div> <!-- Image ou élément de fond au centre -->
+            <div class="background-image right"></div> <!-- Image ou élément de fond à droite -->
+        </div>
+        
+        <!-- Informations sur le jeu (score et timer) -->
+        <div id="game-info">
+            <div id="score">Mouvements: 0</div> <!-- Affiche le nombre de mouvements effectués dans le jeu -->
+            <div id="timer">Temps: 0s</div> <!-- Affiche le temps écoulé depuis le début de la partie -->
+            <button id="restart" style="display: none;">Recommencer</button> <!-- Bouton pour recommencer la partie, caché initialement -->
+            <!-- Nouveau bouton pour démarrer une nouvelle partie -->
+            <button id="new-game" style="display: none;">Nouvelle Partie</button> <!-- Bouton pour démarrer une nouvelle partie, caché initialement -->
+        </div>
+        
+        <!-- Plateau de jeu où les cartes seront affichées -->
+        <div id="board"></div>
+
+        <!-- Message de félicitations lorsque l'utilisateur gagne -->
+        <div id="congratulations" class="hidden"></div> <!-- Ce div contiendra le message de félicitations, initialement caché -->
+    </main>
+    
+    <!-- Lien vers le script JavaScript qui gère la logique du jeu -->
+    <script src="script.js"></script>
+</body>
+</html>

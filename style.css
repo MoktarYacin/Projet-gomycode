@@ -1,0 +1,105 @@
+/* Style de la page */
+body {
+    font-family: Arial, sans-serif; /* Définit la police de la page */
+    text-align: center; /* Centre le texte de la page */
+    overflow: hidden; /* Empêche le défilement de la page */
+    margin: 0; /* Supprime les marges par défaut */
+    background-image: url('joker.png'); /* Applique une image de fond */
+    background-size: cover; /* L'image de fond couvre toute la fenêtre */
+    background-repeat: no-repeat; /* L'image ne se répète pas */
+    background-position: center; /* Centre l'image de fond */
+}
+
+/* Style de l'en-tête */
+h1 {
+    position: relative; /* Permet de positionner l'élément par rapport à sa position normale */
+    z-index: 2; /* Assure que le titre reste au-dessus des autres éléments */
+    color: white; /* Définit la couleur du texte en blanc */
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7); /* Applique une ombre portée au texte pour améliorer la lisibilité */
+}
+
+/* Style du conteneur des informations de jeu */
+#game-info {
+    display: flex; /* Utilise Flexbox pour organiser les éléments en ligne */
+    justify-content: center; /* Centre les éléments horizontalement */
+    align-items: center; /* Centre les éléments verticalement */
+    gap: 20px; /* Espace de 20px entre les éléments */
+    margin-top: 20px; /* Espace au-dessus de #game-info */
+}
+
+/* Style des éléments de score et timer */
+#score, #timer {
+    color: white; /* Texte en blanc */
+    font-size: 20px; /* Taille du texte */
+    padding: 10px; /* Ajoute un peu d'espace autour du texte */
+    background-color: rgba(0, 0, 0, 0.6); /* Fond semi-transparent noir */
+    border-radius: 5px; /* Coins arrondis */
+}
+
+/* Style du plateau de jeu */
+#board {
+    display: grid; /* Utilise la grille CSS pour organiser les cartes */
+    grid-template-columns: repeat(4, 1fr); /* Crée 4 colonnes de taille égale */
+    gap: 10px; /* Espace entre les cartes */
+    width: 400px; /* Définit la largeur du plateau */
+    margin: 20px auto; /* Marge en haut et en bas, centré horizontalement */
+    position: relative; /* Positionnement relatif pour pouvoir manipuler les éléments enfants */
+    z-index: 2; /* Assure que le plateau reste au-dessus des éléments de fond */
+}
+
+/* Style des cartes du jeu */
+.card {
+    width: 80px; /* Largeur de chaque carte */
+    height: 80px; /* Hauteur de chaque carte */
+    background-color: blue; /* Couleur du dos de la carte */
+    display: flex; /* Utilisation de Flexbox pour centrer le contenu à l'intérieur de la carte */
+    align-items: center; /* Centre verticalement le contenu à l'intérieur de la carte */
+    justify-content: center; /* Centre horizontalement le contenu */
+    cursor: pointer; /* Curseur de la souris sous forme de main pour indiquer que la carte est cliquable */
+    font-size: 24px; /* Taille du texte à l'intérieur de la carte */
+    border: 1px solid #ccc; /* Bordure de la carte */
+    color: white; /* Couleur du texte visible sur la carte */
+    transition: background-color 0.3s ease; /* Animation de transition pour le changement de couleur lors du retournement de la carte */
+}
+
+/* Style pour les cartes retournées */
+.card.flipped {
+    background-color: black; /* Couleur du côté visible de la carte lorsqu'elle est retournée */
+}
+
+/* Style du message de félicitations */
+#congratulations {
+    font-size: 24px; /* Taille du texte de félicitations */
+    background-color: rgba(0, 0, 0, 0.8); /* Fond semi-transparent noir */
+    padding: 20px; /* Ajoute de l'espace autour du texte */
+    border-radius: 10px; /* Coins arrondis pour un aspect plus doux */
+    display: inline-block; /* Affiche le message sous forme de bloc en ligne */
+    margin-top: 10px; /* Ajoute un petit espace au-dessus du message */
+    color: white; /* Couleur du texte en blanc */
+    text-align: center; /* Centre le texte */
+}
+
+/* Style des boutons de redémarrage et de nouvelle partie */
+#restart, #new-game {
+    padding: 10px 20px; /* Espace à l'intérieur des boutons */
+    background-color: #007BFF; /* Couleur de fond bleue des boutons */
+    color: white; /* Couleur du texte en blanc */
+    border: none; /* Retire les bordures par défaut */
+    border-radius: 5px; /* Coins arrondis */
+    cursor: pointer; /* Curseur sous forme de main pour indiquer que c'est cliquable */
+    margin-top: 10px; /* Espace au-dessus des boutons */
+    display: block; /* Affiche les boutons en bloc pour qu'ils prennent toute la largeur disponible */
+    margin-left: auto; /* Centre le bouton à gauche */
+    margin-right: auto; /* Centre le bouton à droite */
+    width: 150px; /* Largeur uniforme des boutons */
+}
+
+/* Effet au survol des boutons */
+#restart:hover, #new-game:hover {
+    background-color: #0056b3; /* Change la couleur de fond au survol pour une teinte plus foncée */
+}
+
+/* Cache le bouton "Nouvelle Partie" avant que le jeu ne soit terminé */
+#new-game {
+    display: none; /* Cache le bouton par défaut */
+}
